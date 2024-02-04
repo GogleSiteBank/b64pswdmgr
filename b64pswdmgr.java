@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class b64pswdmgr{
 
     private static int KEY_MIN_LENGTH = 16;
-    private static int KEY_MAX_LENGTH = 64;
+    private static int KEY_MAX_LENGTH = 256;
 
     public static SecureRandom random = new SecureRandom();
     
