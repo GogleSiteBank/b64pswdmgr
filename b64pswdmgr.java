@@ -6,10 +6,15 @@ import java.util.Scanner;
 
 public class b64pswdmgr{
 
+    private static int KEY_MIN_LENGTH = 16;
+    private static int KEY_MAX_LENGTH = 64;
+
     public static SecureRandom random = new SecureRandom();
     
     public static StringBuilder getRandomString() {
-        int randInt = random.nextInt(50);
+	int randInt = random.nextInt( (KEY_MAX_LENGTH - KEY_MIN_LENGTH) + 1)
+		+ KEY_MIN_LENGTH;
+
         String an = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         StringBuilder randString = new StringBuilder();
         for (int i = 0; i < randInt; i++) {
